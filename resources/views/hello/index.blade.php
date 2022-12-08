@@ -8,6 +8,16 @@
 </head>
 <body>
     <h1>Index</h1>
-    <p>This is a sample page with php-template.</p>
+    @isset($msg)
+    <p>こんにちわ{{$msg}}さん。</p>
+    @else
+    <p>何か書いてください。</p>
+    @endisset
+    <form action="/laravel/public/hello" method="POST">
+        @csrf
+        <input type="text" name="msg">
+        <input type="submit">
+
+    </form>
 </body>
 </html>
