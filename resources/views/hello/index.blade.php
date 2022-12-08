@@ -8,23 +8,16 @@
 </head>
 <body>
     <h1>Index</h1>
-    @isset($msg)
-    <p>こんにちわ{{$msg}}さん。</p>
-    @else
-    <p>何か書いてください。</p>
-    <p>forelseの例</p>
-    @forelse($nums as $num)
-    <p>{{$num}}</p>
-    @empty
-    <p>終わりです</p>
-    @endforelse
-    @endisset
-    <form action="/laravel/public/hello" method="POST">
-        @csrf
-        <input type="text" name="msg">
-        <input type="submit">
-
-    </form>
+    <p>$loopの例</p>
+    @foreach ($nums as $num)
+    @if ($loop->first)
+    <p>データ一覧</p><ul>
+    @endif
+    <li>No,{{$loop->iteration}}.{{$num}}</li>
+    @if ($loop->last)
+    </ul><p>---ここまで</p>
+    @endif
+    @endforeach
 
 
 </body>
