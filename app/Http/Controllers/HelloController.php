@@ -10,8 +10,12 @@ class HelloController extends Controller
     public function index() {
         // $nums =  [];
         $data = [
-            "msgTitle" => "CAUTION!",
-            "msgContent" => "これはメッセージの表示"
+            'profiles' => [
+                ['name'=>'山田太郎', 'mail'=>'taro@gmail.com'],
+                ['name'=>'山田aaa', 'mail'=>'taro@gmail.com'],
+                ['name'=>'山田bbb', 'mail'=>'taro@gmail.com']
+            ]
+
         ];
 
         return view('hello.index', $data);
