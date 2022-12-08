@@ -13,7 +13,7 @@
     <p>必要なだけ記述できます。</p>
 
     {{-- <x-message :msg-title='$msgTitle' :msg-content='$msgContent'></x-message> --}}
-    @component('components.message2')
+    {{-- @component('components.message2')
         @slot('msgTitle')
         CAUTION!
         @endslot
@@ -21,7 +21,9 @@
         @slot('msgContent')
         これはメッセージの表示です。
         @endslot
-    @endcomponent
+    @endcomponent --}}
+
+    @include('components.message2', ['msgTitle'=>'OK', 'msgContent'=>'サブビューです'])
 
 
 @endsection
