@@ -8,8 +8,12 @@ use Illuminate\Http\Response;
 class HelloController extends Controller
 {
     public function index() {
+        $nums =  [];
+        $data = [
+            'nums' => $nums
+        ];
 
-        return view('hello.index');
+        return view('hello.index', $data);
     }
 
     public function post(Request $request)

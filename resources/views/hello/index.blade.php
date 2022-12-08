@@ -12,6 +12,12 @@
     <p>こんにちわ{{$msg}}さん。</p>
     @else
     <p>何か書いてください。</p>
+    <p>forelseの例</p>
+    @forelse($nums as $num)
+    <p>{{$num}}</p>
+    @empty
+    <p>終わりです</p>
+    @endforelse
     @endisset
     <form action="/laravel/public/hello" method="POST">
         @csrf
@@ -19,5 +25,7 @@
         <input type="submit">
 
     </form>
+
+
 </body>
 </html>
