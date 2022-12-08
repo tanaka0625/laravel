@@ -8,16 +8,17 @@
 </head>
 <body>
     <h1>Index</h1>
-    <p>$loopの例</p>
-    @foreach ($nums as $num)
-    @if ($loop->first)
-    <p>データ一覧</p><ul>
-    @endif
-    <li>No,{{$loop->iteration}}.{{$num}}</li>
-    @if ($loop->last)
-    </ul><p>---ここまで</p>
-    @endif
-    @endforeach
+    <p>whileとphpの例</p>
+    @php
+        $counter = 0;
+    @endphp
+    @while ($counter < count($nums))
+        <li>{{$nums[$counter]}}</li>
+    @php
+        $counter++;
+    @endphp
+    @endwhile
+
 
 
 </body>
