@@ -10,7 +10,8 @@ class HelloController extends Controller
     public function index() {
         // $nums =  [];
         $data = [
-            'nums' => ["one", "two", "three", "four", "five"]
+            "msgTitle" => "CAUTION!",
+            "msgContent" => "これはメッセージの表示"
         ];
 
         return view('hello.index', $data);
