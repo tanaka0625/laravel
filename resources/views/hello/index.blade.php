@@ -12,7 +12,16 @@
     <p>ここが本文のコンテンツです。</p>
     <p>必要なだけ記述できます。</p>
 
-    <x-message :msg-title='$msgTitle' :msg-content='$msgContent'></x-message>
+    {{-- <x-message :msg-title='$msgTitle' :msg-content='$msgContent'></x-message> --}}
+    @component('components.message2')
+        @slot('msgTitle')
+        CAUTION!
+        @endslot
+
+        @slot('msgContent')
+        これはメッセージの表示です。
+        @endslot
+    @endcomponent
 
 
 @endsection
