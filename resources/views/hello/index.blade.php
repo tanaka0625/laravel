@@ -11,25 +11,18 @@
 @section('content')
     <p>ここが本文のコンテンツです。</p>
     <p>必要なだけ記述できます。</p>
-    <p>{{$msg}}</p>
-    @error('msg')
-    <p>入力に問題があります。再入力してください。</p>
-    @enderror
 
+    <table>
+        <tr><th>Name</th><th>Mail</th><th>Age</th></tr>
+        @foreach ($items as $item)
+            <tr>
+                <td>{{$item->name}}</td>
+                <td>{{$item->mail}}</td>
+                <td>{{$item->age}}</td>
+            </tr>
+        @endforeach
 
-    <form action="" method="post">
-        <table>
-            @csrf
-            @error('msg')
-            <tr><th>ERROR</th><td>{{$message}}</td></tr>
-            @enderror
-            <tr><th>msg: <td><input type="text" name="msg" value="{{old('msg')}}"></td></th></tr>
-
-            <tr><th></th><td><input type="submit" value="send"></td></tr>
-        </table>
-    </form>
-
-
+    </table>
 @endsection
 
 @section('footer')
