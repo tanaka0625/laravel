@@ -12,22 +12,19 @@
     <p>ここが本文のコンテンツです。</p>
     <p>必要なだけ記述できます。</p>
     <p>{{$msg}}</p>
+    @error('msg')
+    <p>入力に問題があります。再入力してください。</p>
+    @enderror
+
 
     <form action="" method="post">
         <table>
             @csrf
-            @error('name')
+            @error('msg')
             <tr><th>ERROR</th><td>{{$message}}</td></tr>
             @enderror
-            <tr><th>name: <td><input type="text" name="name" value="{{old('name')}}"></td></th></tr>
-            @error('mail')
-            <tr><th>ERROR</th><td>{{$message}}</td></tr>
-            @enderror
-            <tr><th>mail: </th><td><input type="text" name="mail" value="{{old('mail')}}"></td></tr>
-            @error('age')
-            <tr><th>ERROR</th><td>{{$message}}</td></tr>
-            @enderror
-            <tr><th>age: </th><td><input type="text" name="age" value="{{old('age')}}"></td></tr>
+            <tr><th>msg: <td><input type="text" name="msg" value="{{old('msg')}}"></td></th></tr>
+
             <tr><th></th><td><input type="submit" value="send"></td></tr>
         </table>
     </form>
