@@ -13,6 +13,7 @@
         @foreach ($items as $item)
             <tr>
                 <td>{{$item->getDate()}}</td>
+                <td>@if($item->board != null){{$item->board->getDate()}}@endif</td>
             </tr>
         @endforeach
     </table>    

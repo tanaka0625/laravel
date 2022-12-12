@@ -11,6 +11,11 @@ class Person extends Model
 {
     use HasFactory;
 
+    public function board()
+    {
+        return $this->hasOne('App\Models\Board');
+    }
+
     protected $guarded = array('id');
 
     public static $rules = array(
