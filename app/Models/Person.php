@@ -11,9 +11,9 @@ class Person extends Model
 {
     use HasFactory;
 
-    public function board()
+    public function boards()
     {
-        return $this->hasOne('App\Models\Board');
+        return $this->hasMany('App\Models\Board');
     }
 
     protected $guarded = array('id');
