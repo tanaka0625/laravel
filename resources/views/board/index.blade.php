@@ -11,7 +11,10 @@
     <table>
         <tr><th>Date</th></tr>
         @foreach ($items as $item)
-            <tr><td>{{$item->getDate()}}</td></tr>
+            <tr>
+                <td>{{$item->message}}</td>
+                <td>{{$item->person->name}}</td>
+            </tr>
         @endforeach
     </table>
 @endsection
