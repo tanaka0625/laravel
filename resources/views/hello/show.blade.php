@@ -14,6 +14,7 @@
             <tr>
                 <th>id: </th><td>{{$item->id}}</td>
                 <th>name: </th><td>{{$item->name}}</td>
+                <th>age: </th><td>{{$item->age}}</td>
             </tr>
         </table>
     @endforeach
