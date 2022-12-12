@@ -9,21 +9,25 @@
 
 @section('content')
     <table>
-        <tr><th>Data</th></tr>
-        @foreach ($items as $item)
+        <tr><th>Person</th><th>Board</th></tr>
+        @foreach ($hasItems as $item)
             <tr>
                 <td>{{$item->getDate()}}</td>
                 <td>
-                    @if($item->boards != null)
                     <table width="100%">
-                        @foreach ($item->boards as $item)
-                            <tr><td>{{$item->getDate()}}</td></tr>
+                        @foreach ($item->boards as $obj)
+                            <tr><td>{{$obj->getDate()}}</td></tr>
                         @endforeach
                     </table>
-                    @endif
                 </td>
             </tr>
         @endforeach
+    </table>
+    <table>
+        <tr><th>Person</th></tr>
+        @foreach ($noItems as $item)
+            <tr><td>{{$item->getDate()}}</td></tr>
+        @endforeach 
     </table>    
 @endsection
 
