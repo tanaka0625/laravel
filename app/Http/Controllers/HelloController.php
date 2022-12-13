@@ -7,12 +7,13 @@ use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Validator;
 use Illuminate\Support\Facades\DB;
+use App\Models\Person;
 class HelloController extends Controller
 {
     public function index(Request $request) {
 
         $sort = $request->sort;
-        $items = DB::table('people')->orderBy($sort,'asc')->simplePaginate(2);
+        $items = Person::orderBy($sort,'asc')->paginate(1);
 
         return view('hello.index', ['items'=>$items,'sort'=>$sort]);
     }

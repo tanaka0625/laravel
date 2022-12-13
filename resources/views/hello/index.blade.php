@@ -27,7 +27,7 @@
         @endforeach
 
     </table>
-    {{$items->appends(['sort' => $sort])->links()}}
+    {{$items->appends(['sort' => $sort])->render()}}
 @endsection
 
 @section('footer')
