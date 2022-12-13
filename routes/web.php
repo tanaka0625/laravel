@@ -59,6 +59,9 @@ Route::resource('rest', RestappController::class);
 
 Route::get('hello/rest', [HelloController::class, 'rest']);
 
+Route::get('hello/session', [HelloController::class, 'ses_get']);
+Route::post('hello/session', [HelloController::class, 'ses_put']);
+
 
 
 // Route::get('/', [TopController::class, 'index']);
