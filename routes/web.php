@@ -65,3 +65,7 @@ Route::post('hello/session', [HelloController::class, 'ses_put']);
 
 
 // Route::get('/', [TopController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
