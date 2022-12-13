@@ -11,9 +11,10 @@ class HelloController extends Controller
 {
     public function index(Request $request) {
 
-        $items = DB::table('people')->orderBy('age', 'asc')->get();
+        $sort = $request->sort;
+        $items = DB::table('people')->orderBy($sort,'asc')->simplePaginate(2);
 
-        return view('hello.index', ['items'=>$items]);
+        return view('hello.index', ['items'=>$items,'sort'=>$sort]);
     }
 
     public function post(Request $request)

@@ -13,7 +13,11 @@
     <p>必要なだけ記述できます。</p>
 
     <table>
-        <tr><th>Name</th><th>Mail</th><th>Age</th></tr>
+        <tr>
+            <th><a href="?sort=name">name</a></th>
+            <th><a href="?sort=mail">mail</a></th>
+            <th><a href="?sort=age">age</a></th>
+        </tr>
         @foreach ($items as $item)
             <tr>
                 <td>{{$item->name}}</td>
@@ -23,6 +27,7 @@
         @endforeach
 
     </table>
+    {{$items->appends(['sort' => $sort])->links()}}
 @endsection
 
 @section('footer')
