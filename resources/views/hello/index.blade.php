@@ -11,7 +11,11 @@
 @section('content')
     <p>ここが本文のコンテンツです。</p>
     <p>必要なだけ記述できます。</p>
-
+    @if (Auth::check())
+        <p>USER: {{$user->name . '(' . $user->email . ')'}}</p>
+    @else
+        <p>ログインしていません。(<a href="/laravel/public/login">ログイン</a>|<a href="/laravel/public/register">登録</a>)</p>
+    @endif
     <table>
         <tr>
             <th><a href="?sort=name">name</a></th>
