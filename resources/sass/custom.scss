@@ -4,19 +4,42 @@
 // Variables
 @import 'variables';
 
+// btn-primaryを赤色にする
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+$primary: red;
 
 h1{
     color: aquamarine;
     margin: auto;
 }
 
-@mixin square {
-    width: 100px;
-    height: 100px;
+@mixin square($num1:100px, $num2:200px) {
+    width: $num1;
+    height: $num2;
     background-color: red
 }
+
+$default: 200px, 300px;
+
 .box {
-    @include square;
+    @include square($default...);
+    background-color: gray;
+}
+
+
+/*ブレイクポイントを設定*/
+@mixin sp {
+    @media screen and (max-width: 767px) {
+        @content;/*スタイルを展開したいところに記述する*/
+    }
+}
+
+.sample-box {
+    width: 1200px;
+    @include sp {
+        width: 100%;/*ミックスインに渡したいスタイルを記述する*/
+        background-color: yellow;
+    }
 }
