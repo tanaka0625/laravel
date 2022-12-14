@@ -5,10 +5,9 @@
 @import 'variables';
 
 // btn-primaryを赤色にする
-
+$primary: red;
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-$primary: red;
 
 h1{
     color: aquamarine;
