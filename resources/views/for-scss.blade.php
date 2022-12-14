@@ -10,5 +10,8 @@
   <div>
     <h1>SCSSのテスト</h1>
   </div>
+  <div class="box">
+    こんにちわ
+  </div>
 </body>
 </html>

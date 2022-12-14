@@ -10823,3 +10823,9 @@ h1, .h1 {
   color: aquamarine;
   margin: auto;
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
