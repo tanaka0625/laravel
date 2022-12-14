@@ -65,6 +65,10 @@ Route::post('hello/session', [HelloController::class, 'ses_put']);
 Route::get('hello/auth', [HelloController::class, 'getAuth']);
 Route::post('hello/auth', [HelloController::class, 'postAuth']);
 
+Route::get('scss', function () {
+    return view('for-scss');
+});
+
 
 
 // Route::get('/', [TopController::class, 'index']);
